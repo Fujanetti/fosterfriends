@@ -1,0 +1,12 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+  <div class="col-6">
+    <%= simple_form_for [@pet, @pet_review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :content %>
+      <%= f.submit "Submit review", class: "btn btn-info rounded-pill " %>
+    <% end %>
+  </div>
+
+</div>
