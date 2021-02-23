@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_one :shelter
-  has_many :pets, through: :shelter
+  has_one :shelter, dependent: :destroy
+  has_many :pets, through: :shelter, dependent: :destroy
   
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -15,5 +15,5 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :city, presence: true
   validates :zip_code, presence: true
-  validates :username, presence: true, uniqueness: true
+  
 end
