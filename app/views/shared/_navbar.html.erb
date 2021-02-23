@@ -2,15 +2,12 @@
   <%= link_to root_path, class: "navbar-brand" do %>
   <%= image_tag "https://ci6.googleusercontent.com/proxy/O5Hy-WtOEzQ_1-syh0TZgI3ctyS90IsRKTyIh6oCUgELchFT93eiGXUYzuauaiXwJRlFCrZzztXfzjhVDdNy8P7vOmajDEqaixswkHFCQMMhhu27jQoYvxXDcKxvehjKNa8WpJPbWhV3296TqhQQuzxrieI1PkAw=s0-d-e1-ft#https://www.freelogodesign.org/file/app/client/thumb/cffd8def-62df-40a0-ba2e-859b661d9688_200x200.png", class: "logo-nav" %>
   <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+      <li class="nav-item active hmbtn flex-start">
+        <%= link_to "Home", "#", class: "nav-link text-left" %>
       </li>
+      <% if user_signed_in?%>
       <li class="nav-item">
         <%= link_to "Messages", "#", class: "nav-link" %>
       </li>
@@ -22,12 +19,21 @@
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
-      <% else %>
+      <% end %>
+      <li class="d-flex searchfld">
+        <%= form_tag pets_path, :method => 'get', :class => "d-flex" do  %>
+        <%= text_field_tag :search, params[:search], :class => "form-control me-2 searchbar" %>
+        <div>
+          <%= submit_tag "Search", :class => "btnnav" %>
+        </div>
+        <% if user_signed_in? == false%>
       <li class="logbtn">
         <%= link_to "Login", new_user_session_path %>
       </li>
+      <li class=>
+        <% end %>
+      </li>
       <% end %>
-      <%= text_field_tag :search, params[:search], :class => "form-control me-2 searchfld"%>
     </ul>
   </div>
 </div>

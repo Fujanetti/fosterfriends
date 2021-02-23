@@ -4,7 +4,7 @@ padding: 0px
 .navbar-lewagon {
   justify-content: space-between;
   background: #E4F2FD;
-  font-size: 20px
+  font-size: 16px
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,17 +27,47 @@ padding: 0px
 
 }
  .logbtn a {
-  color: #EFBB76;
-  border: 1px #EFBB76 solid;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: black;
+  padding: 10px 40px;
+  border-radius: 18px;
+  background-color: #F56F6C;
   &:hover {
-    color: rgba(50,50,50, .8);
-    background-color: #EFBB76;
+    color: #F56F6C;
+    background-color: #EFBB76 ;
     text-decoration: none;
   }
 
 }
 .searchfld {
-  padding: 30px 6px 12px 12px;
+  position: relative;
+
+}
+
+.logbtn {
+  margin-top: 9px;
+  margin-right: 30px;
+}
+
+.btnnav {
+  border-left: transparent;
+  border-color: #EFBB76;
+  border-radius: 0 15px 15px 0px;
+  position: absolute;
+  background-color: #EFBB76;
+  border-style: none;
+
+  padding: 7px 32px;
+  left: 212px;
+  &:hover {
+background-color: #F56F6C;
+color: #E48F1E;
+  }
+}
+
+.searchbar {
+  margin-right: 140px;
+  border-radius: 15px 0px 0px 15px;
+}
+.hmbtn {
+
 }
