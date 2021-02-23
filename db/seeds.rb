@@ -7,21 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+
 Pet.destroy_all
 
 puts "Creating pets..."
 
-10.times do
-  pet = Pet.new(
+jerry_the_dog = {
     name: FAKER::Creature::Dog.name,
     age: Faker::Number.between(from: 1, to: 10),
+    shelter_id: 1,
     animal_type: Faker::Creature::Animal.name,
     price_per_day: Faker::Creature::Animal.name,
     gender: Faker::Creature::Dog.gender,
     breed: Faker::Creature::Dog.breed,
     description: Faker::Creature::Dog.meme_phrase
-  )
-  pet.save!
+}
+
+giura_the_dog = {
+  name: FAKER::Creature::Dog.name,
+  age: Faker::Number.between(from: 1, to: 10),
+  shelter_id: 2,
+  animal_type: Faker::Creature::Animal.name,
+  price_per_day: Faker::Creature::Animal.name,
+  gender: Faker::Creature::Dog.gender,
+  breed: Faker::Creature::Dog.breed,
+  description: Faker::Creature::Dog.meme_phrase
+}
+
+
+[jerry_the_dog, giura_the_dog].each do |attributes|
+  pet = Pet.create!(attributes)
+  puts "Created #{pet.name}"
 end
 
-puts "#{pet}"
+puts "Finished!"
