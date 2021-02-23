@@ -1,6 +1,10 @@
+.navbar{
+padding: 0px
+}
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #E4F2FD;
+  font-size: 20px
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +12,32 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 71px;
+  height: 71px
+}
+
+.logo-nav {
+  height: 60px;
+  width: 60px;
+}
+
+.nav-bar li .nav-item .logbtn {
+  border: 1px #F2AF58 ridge;
+  color: #F2AF58
+
+}
+ .logbtn a {
+  color: #EFBB76;
+  border: 1px #EFBB76 solid;
+  padding: 10px 20px;
+  border-radius: 5px;
+  &:hover {
+    color: rgba(50,50,50, .8);
+    background-color: #EFBB76;
+    text-decoration: none;
+  }
+
+}
+.searchfld {
+  padding: 30px 6px 12px 12px;
 }
