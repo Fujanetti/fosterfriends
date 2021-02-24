@@ -20,9 +20,11 @@
         
           </div>
         </div>
+        
         <%= link_to 'Edit', edit_pet_path(@pet), class:"btn btn-warning rounded"  %> |
-      <%= link_to 'Back', pets_path, class:"btn btn-warning rounded"   %>
-      <%= link_to 'Reserve', reservations_new_path, class:"btn btn-warning rounded" %>
+        <%= link_to 'Back', pets_path, class:"btn btn-warning rounded"   %> |
+        <%= link_to 'Reserve', new_pet_reservation_path(@pet), class:"btn btn-warning rounded", style: "background-color: #F56F6C" %>
+        
     </div>
   </div>
 
