@@ -1,1 +1,16 @@
-// Specific CSS for your home-page
+.main-div {
+  width: 100%;
+
+
+  .banner-img{
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+  }
+}
+.logo-img {
+  margin: 0 auto;
+  width:200px;
+  display: block;
+}
