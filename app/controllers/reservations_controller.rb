@@ -5,6 +5,7 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @pet = Pet.find(params[:pet_id])
+    @user = current_user
   end
 
   def create
