@@ -1,27 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<p id="notice">
+  <%= notice %>
+</p>
+<div class="container1 text-center">
+  <h1 class="mt-4 mb-5">Pets In
+    <%= params[:search] %>
+  </h1>
+  <div class="row main-holder">
     <% @pets.each do |pet| %>
-      <tr>
-        <td><%= pet.name %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="col-sm-4 individual-card">
+      <div class="card mb-4">
+        <img src="https://weneedfun.com/wp-content/uploads/2015/10/Cute-puppy-Pictures-29.jpg" class="card-img-top" alt="..." style="object-fit: cover;">
+        <div class="card-body">
+          <h5 class=card-title>
+            <%= pet.name %>
+          </h5>
+          <p class="card-text">
+            <%= pet.description %>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Age:
+            <%= pet.age %>
+          </li>
+          <li class="list-group-item">
+            <%= pet.animal_type %>
+          </li>
+          <li class="list-group-item">
+            <%= pet.gender %>
+          </li>
+          <li class="list-group-item">
+            <%= pet.breed %>
+          </li>
+          <li class="list-group-item">
+            <%= pet.shelter.name %>
+          </li>
+          <li class="list-group-item">
+            <%= pet.price_per_day %>
+          </li>
+          <%= link_to "Learn more about #{pet.name}" , pet, class: "bottom-link" %>
+        </ul>
+      </div>
+      </ul>
+    </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New pet', new_pet_path %>
+  </div>
+</div>
