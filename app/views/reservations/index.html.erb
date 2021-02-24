@@ -1,12 +1,12 @@
 <div class="container text-center mt-5">
-  <% @reservations.each do |reservation| %>
-    <h1>Reservation for <%= reservation.user.first_name %></h1>
-    <div class="card text-center">
+  <h1 class="mb-5">Reservation for <%= @reservations.first.user.first_name %></h1>
+  <% @reservations.reverse.each do |reservation| %>
+    <div class="card text-center mb-5">
        <div class="card-header">
         Booking of <%= reservation.pet.name %>
        </div>
        <div class="card-body">
-        <h5 class="card-title">You are booking baxter from <%= reservation.start_date %> to <%= reservation.end_date %></h5>
+        <h5 class="card-title">You are booking <%= reservation.pet.name %> from <%= reservation.start_date %> to <%= reservation.end_date %></h5>
         <p class="card-text">Total price is <%= reservation.total_price %></p>
         <p class="card-text"> Please return <%= reservation.pet.name %> to <%= reservation.pet.shelter.name %>  on <%= reservation.end_date %></li>
         <p class="card-text"> <%= reservation.pet.name %>'s information:</p>
@@ -18,6 +18,7 @@
     <li class="list-group-item">Breed: <%= reservation.pet.breed %></li>
     <li class="list-group-item">Shelter: <%= reservation.pet.shelter.name %></li>
     <li class="list-group-item">Price Per Day: <%= reservation.pet.price_per_day %></li>
+    <li class="list-group-item">City: <%= reservation.pet.shelter.user.city %></li>
   </ul>
 
 </div>
