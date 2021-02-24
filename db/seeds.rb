@@ -34,27 +34,29 @@ jerry = User.create!(
     password: "123456", 
     birth_date: Date.today
     )
-    
- Reservation.create!(
-  user_id: 1,
-  pet_id: 10,
+
+  Shelter.create(name: "Puppy Palace", user_id: owner)
+ 
+  Reservation.create!(
+  user_id: 14,
+  pet_id: ,
   start_date: Date.new(2001,2,3),
   end_date: Date.new(2001,3,3),
   total_price: 100.0
    )
       
-10.times do
-  Pet.create(
-    name: Faker::Creature::Dog.name,
-    age: Faker::Number.between(from: 1, to: 10),
-    shelter: Shelter.first,
-    animal_type: Faker::Creature::Animal.name,
-    price_per_day: 55,
-    gender: Faker::Creature::Dog.gender,
-    breed: Faker::Creature::Dog.breed,
-    description: Faker::Creature::Dog.meme_phrase
-)
-end
+# 10.times do
+#   Pet.create(
+#     name: Faker::Creature::Dog.name,
+#     age: Faker::Number.between(from: 1, to: 10),
+#     shelter: Shelter.first,
+#     animal_type: Faker::Creature::Animal.name,
+#     price_per_day: 55,
+#     gender: Faker::Creature::Dog.gender,
+#     breed: Faker::Creature::Dog.breed,
+#     description: Faker::Creature::Dog.meme_phrase
+# )
+# end
 
 
 
