@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation.user = @user
     @reservation.total_price = 50
     if @reservation.save
-      redirect_to root_path
+      redirect_to reservations_path, notice: "Reservation successful!"
     else
       render :new
     end
