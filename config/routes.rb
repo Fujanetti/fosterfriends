@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-
-  resources :pets, only: %w[index show] do
-    resources :pet_reviews, only: %w[new create]
-  end
   
-  resources :shelters, only: %w[show] do
-    resources :pets, only: %w[new edit update destroy update]
-  end
-  
-  resources :dashboard, only: %w[index]
+  root to: 'pets#home'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :shelters, only: :show
+  resources :pets
+  
+  resources :reservations, only: [:index] do
+    resources :pet_reviews, only: [:new, :create]
+    resources :shelter_reviews, only: [:new, :create]
+  end
 end
