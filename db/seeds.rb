@@ -13,26 +13,26 @@ User.destroy_all
 Shelter.destroy_all
 
 jerry = User.create!(
-  first_name: "Jerry",
-  last_name: "Deren",
-  email: "jerryderry@aol.com",
-  user_type: "caretaker",
-  address: "31 Taco Bell",
-  city: "Lisbon",
-  zip_code: 10965,
-  password: "123456",
+  first_name: "Jerry", 
+  last_name: "Deren", 
+  email: "jerryderry@aol.com", 
+  user_type: "Caretaker", 
+  address: "31 Taco Bell", 
+  city: "Lisbon", 
+  zip_code: 10965, 
+  password: "123456", 
   birth_date: Date.today
 )
 
   owner = User.create!(
-    first_name: "John",
-    last_name: "Jones",
-    email: "hallal@aol.com",
-    user_type: "owner",
-    address: "14 Brighton",
-    city: "Lisbon",
-    zip_code: 10965,
-    password: "123456",
+    first_name: "John", 
+    last_name: "Jones", 
+    email: "hallal@aol.com", 
+    user_type: "Shelter", 
+    address: "14 Brighton", 
+    city: "Lisbon", 
+    zip_code: 10965, 
+    password: "123456", 
     birth_date: Date.today
   )
 
