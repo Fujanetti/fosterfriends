@@ -13,9 +13,13 @@ class ReservationsController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     @user = current_user
     @reservation.pet = @pet
-    @reservation.save
-
-    redirect_to user_path(@user)
+    @reservation.user = @user
+    @reservation.total_price = 50
+    if @reservation.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
