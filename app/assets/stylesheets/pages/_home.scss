@@ -15,17 +15,20 @@
 }
 
 .form-search {
-  width: 50%;
-  margin-left: 300px;
+  width: 100%;
   border-radius: 0 15px 15px 0px;
+
+
+}
+.home-search {
+  width: 500px;
+  display: flex;
+  margin: 0 auto;
 
 }
 
 .home-btn {
-  position: absolute;
   padding: 7px 32px;
-  top: 377px;
-  left: 356px;
   border-radius: 15px 0 0 15px;
   color: rgb(70,70,70);
   background-color: #f29224;
