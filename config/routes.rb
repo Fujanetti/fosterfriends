@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     resources :pets, only: [:new, :create]
   end
 
-  resources :pets, except: [:new, :create]
+  resources :pets, except: [:new, :create] do
+    resources :reservations, only: [:new, :create]
+  end
   
   resources :reservations, only: [:index] do
     resources :pet_reviews, only: [:new, :create]
     resources :shelter_reviews, only: [:new, :create]
   end
+
 end
