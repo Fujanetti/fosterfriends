@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reservations/new'
+  get 'reservations/create'
   devise_for :users
   
   root to: 'pets#home'
