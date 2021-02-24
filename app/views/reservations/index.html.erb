@@ -1,0 +1,29 @@
+<div class="container text-center mt-5">
+  <% @reservations.each do |reservation| %>
+    <h1>Reservation for <%= reservation.user.first_name %></h1>
+    <div class="card text-center">
+       <div class="card-header">
+        Booking of <%= reservation.pet.name %>
+       </div>
+       <div class="card-body">
+        <h5 class="card-title">You are booking baxter from <%= reservation.start_date %> to <%= reservation.end_date %></h5>
+        <p class="card-text">Total price is <%= reservation.total_price %></p>
+        <p class="card-text"> Please return <%= reservation.pet.name %> to <%= reservation.pet.shelter.name %>  on <%= reservation.end_date %></li>
+        <p class="card-text"> <%= reservation.pet.name %>'s information:</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Description: <%= reservation.pet.description %></li>
+    <li class="list-group-item">Animal Type: <%= reservation.pet.animal_type %></li>
+    <li class="list-group-item">Age: <%= reservation.pet.age %></li>
+    <li class="list-group-item">Gender: <%= reservation.pet.gender %></li>
+    <li class="list-group-item">Breed: <%= reservation.pet.breed %></li>
+    <li class="list-group-item">Shelter: <%= reservation.pet.shelter.name %></li>
+    <li class="list-group-item">Price Per Day: <%= reservation.pet.price_per_day %></li>
+  </ul>
+
+</div>
+<div class="card-footer text-muted">
+      <li class="card-text"> Please return <%= reservation.pet.name %> to <%= reservation.pet.shelter.name %>  on <%= reservation.end_date %></li>
+        </div>
+    </div>
+  <% end %>
+</div>

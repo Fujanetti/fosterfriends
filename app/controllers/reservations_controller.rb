@@ -1,4 +1,7 @@
 class ReservationsController < ApplicationController
+  def index
+    @reservations = Reservation.where(params[:user_id])
+  end
   def new
     @reservation = Reservation.new
     @pet = Pet.find(params[:pet_id])
