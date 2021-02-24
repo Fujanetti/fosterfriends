@@ -27,19 +27,24 @@ padding: 0px
 
 }
  .logbtn a {
-  color: black;
+  color: rgb(70,70,70);
   padding: 10px 40px;
   border-radius: 18px;
   background-color: #F56F6C;
+  transition: .5s;
+  font-family: 'Source Sans Pro', sans-serif;
+  opacity: .9;
   &:hover {
-    color: #F56F6C;
-    background-color: #EFBB76 ;
+    color: black;
+    background-color: #65cc60;
     text-decoration: none;
+    opacity: 1;
   }
 
 }
 .searchfld {
   position: relative;
+
 
 }
 
@@ -49,18 +54,21 @@ padding: 0px
 }
 
 .btnnav {
+  color: rgb(70,70,70);
   border-left: transparent;
   border-color: #EFBB76;
   border-radius: 0 15px 15px 0px;
   position: absolute;
-  background-color: #EFBB76;
+  background-color: #f29224;
   border-style: none;
-
   padding: 7px 32px;
   left: 212px;
+  transition: .4s;
+  font-family: 'Source Sans Pro', sans-serif;
   &:hover {
-background-color: #F56F6C;
-color: #E48F1E;
+background-color: #faa360;
+color: black;
+opacity: 1;
   }
 }
 
