@@ -5,11 +5,18 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @reservation = Reservation.new(reservation_params)
+    @pet = Pet.find(params[:pet_id])
+    @user = current_user
+    @reservation.pet = @pet
+    @reservation.save
+
+    redirect_to user_path(@user)
   end
 
   private
 
   def reservation_params
-    params.require(:reservation).permit(:name, :age, :animal_type, :price_per_day, :gender, :breed, :description)
+    params.require(:reservation).permit(:total_price, :start_date, :end_date)
   end
 end
