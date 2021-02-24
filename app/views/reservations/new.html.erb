@@ -1,9 +1,8 @@
 <div class="container">
-<%= simple_form_for @reservation  do |f| %>
+<%= simple_form_for [@pet, @reservation]  do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit %>
 <% end %>
 
 
-<h2>Total price: <%=  %></h2>
