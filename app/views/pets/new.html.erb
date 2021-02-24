@@ -1,0 +1,10 @@
+<%= simple_form_for @pet do |f| %>
+  <%= f.references :shelter_id %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :animal_type %>
+  <%= f.input :price_per_day %>
+  <%= f.input :gender %>
+  <%= f.input :breed %>
+  <%= f.input :description %>
+<% end %>
