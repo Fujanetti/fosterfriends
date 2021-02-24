@@ -3,8 +3,8 @@
 
 .bottom-link {
   border: 1px rgba(10,10,10,.2) ridge;
-  padding: 20px;
   box-shadow: 1px 2px 5px rgba(0,0,0,.4);
+  padding-bottom: 20px;
 }
 
 .main-holder {
@@ -17,4 +17,5 @@
 }
 .individual-card {
   box-shadow: 2px 4px 5px rgba(0,0,0,.4);
+  padding: 0;
 }
