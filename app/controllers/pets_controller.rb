@@ -1,6 +1,5 @@
 class PetsController < ApplicationController
-  def home
-    
+  def home    
   end
 
   def index
@@ -17,11 +16,13 @@ class PetsController < ApplicationController
   end
 
   def create
-    raise
     @pet = Pet.new(pet_params)
-
+    @shelter = Shelter.find(params[:shelter_id])
+    @pet.shelter = @shelter
     @pet.save
 
+    # redirect_to shelter_path(@shelter) Once shelter views are created uncomment this and delete line below
+    redirect_to pets_path
   end
 
   def edit
@@ -32,14 +33,14 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.update(pet_params)
 
-    redirect_to pet_path(@peth)
+    redirect_to pet_path(@pet)
   end
 
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
 
-    redirect_to pet_path
+    redirect_to pet_pat
   end
 
   private

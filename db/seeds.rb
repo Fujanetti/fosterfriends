@@ -57,7 +57,8 @@ jerry_the_dog = Pet.create!(
     description: Faker::Creature::Dog.meme_phrase
 )
 
-giura_the_dog = Pet.create!(
+10.times do
+  Pet.create(
   name: Faker::Creature::Dog.name,
   age: Faker::Number.between(from: 1, to: 10),
   shelter: Shelter.first,
@@ -67,6 +68,7 @@ giura_the_dog = Pet.create!(
   breed: Faker::Creature::Dog.breed,
   description: Faker::Creature::Dog.meme_phrase
 )
+end
 
 
 puts "Finished!"

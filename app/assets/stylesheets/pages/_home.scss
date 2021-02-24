@@ -4,8 +4,7 @@
 
   .banner-img{
     width: 100%;
-
-    position: fixed;
+    position: absolute;
     bottom: 0;
   }
 }
@@ -13,4 +12,29 @@
   margin: 0 auto;
   width:200px;
   display: block;
+}
+
+.form-search {
+  width: 50%;
+  margin-left: 300px;
+  border-radius: 0 15px 15px 0px;
+
+}
+
+.home-btn {
+  position: absolute;
+  padding: 7px 32px;
+  top: 377px;
+  left: 356px;
+  border-radius: 15px 0 0 15px;
+  color: rgb(70,70,70);
+  background-color: #f29224;
+  border-style: none;
+  transition: .4s;
+  font-family: 'Source Sans Pro', sans-serif;
+  &:hover {
+background-color: #faa360;
+color: black;
+opacity: 1;
+  }
 }
