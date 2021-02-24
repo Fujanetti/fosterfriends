@@ -1,14 +1,33 @@
-<div class="text-center">
+<p id="notice"><%= notice %></p>
 
-  <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @pet.name %>
-  </p>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="card border-info mb-3" style="max-width: 40rem;">
+        <img src="https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" class="card-img-top" alt="...">
+          <div class="card-header fw-bold" style="font-size: 30px"><%= @pet.name %></div>
+          <div class="card-body">
+            <h4 class="card-title text-uppercase">Details: </h4>
+            <p class="card-text text-uppercase">Age: <span><%= @pet.age %></span> </p>
+            <p class="card-text text-uppercase">Animal Type: <span><%= @pet.animal_type %></span> </span>
+            <p class="card-text text-uppercase">Price per day: <span><%= @pet.price_per_day %></span> </p>
+            <p class="card-text text-uppercase">Gender: <span><%= @pet.gender %></span>  </p>
+            <p class="card-text text-uppercase">Breed: <span><%= @pet.breed %></span> </p>
+            <p class="card-text text-uppercase">Description: <span><%= @pet.description %></span> </p>
+            
 
-  <%= link_to 'Edit', edit_pet_path(@pet) %> |
-  <%= link_to 'Back', pets_path %>
+        
+          </div>
+        </div>
+        <%= link_to 'Edit', edit_pet_path(@pet), class:"btn btn-warning rounded"  %> |
+      <%= link_to 'Back', pets_path, class:"btn btn-warning rounded"   %>
+    </div>
+  </div>
+
+
+
+  
 
 
 </div>
