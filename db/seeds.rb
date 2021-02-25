@@ -8,38 +8,37 @@
 
 puts "Cleaning database..."
 Pet.destroy_all
-User.destroy_all
 Shelter.destroy_all
 
-jerry = User.create!(
-  first_name: "Jerry", 
-  last_name: "Deren", 
-  email: "jerryderry@aol.com", 
-  user_type: "Caretaker", 
-  address: "31 Taco Bell", 
-  city: "Lisbon", 
-  zip_code: 10965, 
-  password: "123456", 
-  birth_date: Date.today
-)
+# jerry = User.create!(
+#   first_name: "Jerry", 
+#   last_name: "Deren", 
+#   email: "jerryderry@aol.com", 
+#   user_type: "Caretaker", 
+#   address: "31 Taco Bell", 
+#   city: "Lisbon", 
+#   zip_code: 10965, 
+#   password: "123456", 
+#   birth_date: Date.today
+# )
 
-  owner = User.create!(
-    first_name: "John", 
-    last_name: "Jones", 
-    email: "hallal@aol.com", 
-    user_type: "Shelter", 
-    address: "14 Brighton", 
-    city: "Lisbon", 
-    zip_code: 10965, 
-    password: "123456", 
-    birth_date: Date.today
-    )
+#   owner = User.create!(
+#     first_name: "John", 
+#     last_name: "Jones", 
+#     email: "hallal@aol.com", 
+#     user_type: "Shelter", 
+#     address: "14 Brighton", 
+#     city: "Lisbon", 
+#     zip_code: 10965, 
+#     password: "123456", 
+#     birth_date: Date.today
+#     )
 
   Shelter.create(name: "Puppy Palace", user_id: owner)
  
   Reservation.create!(
-  user_id: 14,
-  pet_id: ,
+  user_id: 22,
+  pet_id: 1,
   start_date: Date.new(2001,2,3),
   end_date: Date.new(2001,3,3),
   total_price: 100.0
