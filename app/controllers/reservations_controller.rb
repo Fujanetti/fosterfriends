@@ -1,8 +1,8 @@
 class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.where(user_id: current_user)
-
   end
+  
   def new
     @reservation = Reservation.new
     @pet = Pet.find(params[:pet_id])

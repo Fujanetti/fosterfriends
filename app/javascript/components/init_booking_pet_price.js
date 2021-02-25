@@ -8,7 +8,7 @@ const initBookingPetPrice = () => {
 
     const bookingForm = document.querySelector('#new_reservation')
 
-    bookingForm.addEventListener('change', (event) => {
+    bookingForm.addEventListener('change', (event) => {    // Calculates total price, only after picking dates
       const price = +bookingPetPrice.dataset.petPrice;
       console.log(price);
       const startYear = document.querySelector('#reservation_start_date_1i').value;
@@ -21,7 +21,7 @@ const initBookingPetPrice = () => {
 
       const startDate = Date.parse(`${startYear}/${startMoth}/${startDay}`);
       const endDate = Date.parse(`${endYear}/${endMoth}/${endDay}`);
-      const totalDays = (endDate - startDate) / (1000 * 60 * 60 * 24); // Convert from milliseconds to days
+      const totalDays = (endDate - startDate) / (1000 * 60 * 60 * 24); // Convert from milliseconds to days.
 
       console.log(startDate)
       console.log(endDate)
