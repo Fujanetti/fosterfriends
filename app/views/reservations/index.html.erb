@@ -8,6 +8,9 @@
     <div class="card text-center mb-5">
        <div class="card-header">
         Booking of <%= reservation.pet.name %>
+        <% if reservation.end_date.past? %>
+          <%= link_to "Please leave a review...",  new_reservation_pet_review_path(reservation) %>
+        <% end  %>
        </div>
        <div class="card-body">
         <h5 class="card-title">You are booking <%= reservation.pet.name %> from <%= reservation.start_date %> to <%= reservation.end_date %></h5>
