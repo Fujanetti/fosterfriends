@@ -15,7 +15,6 @@ class ReservationsController < ApplicationController
     @user = current_user
     @reservation.pet = @pet
     @reservation.user = @user
-    @reservation.total_price = 50
     if @reservation.save
       redirect_to reservations_path, notice: "Reservation successful!"
     else

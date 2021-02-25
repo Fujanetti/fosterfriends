@@ -29,6 +29,8 @@ const initBookingPetPrice = () => {
       const totalPrice = totalDays * price;
       console.log(totalPrice);
       displayPrice.innerText = `Total: ${totalPrice}$`
+      const reservationPrice = document.querySelector('#reservation_total_price');
+      reservationPrice.value = totalPrice;
 
   })
 
