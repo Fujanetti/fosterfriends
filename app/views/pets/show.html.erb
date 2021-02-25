@@ -3,34 +3,41 @@
 
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="row-col-12">
         <div class="card border-info mb-3" style="max-width: 40rem;">
         <img src="https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" class="card-img-top" alt="...">
           <div class="card-header fw-bold" style="font-size: 30px"><%= @pet.name %></div>
           <div class="card-body">
-            <h4 class="card-title text-uppercase">Details: </h4>
-            <p class="card-text text-uppercase">Age: <span><%= @pet.age %></span> </p>
-            <p class="card-text text-uppercase">Animal Type: <span><%= @pet.animal_type %></span> </span>
-            <p class="card-text text-uppercase">Price per day: <span><%= @pet.price_per_day %></span> </p>
-            <p class="card-text text-uppercase">Gender: <span><%= @pet.gender %></span>  </p>
-            <p class="card-text text-uppercase">Breed: <span><%= @pet.breed %></span> </p>
-            <p class="card-text text-uppercase">Description: <span><%= @pet.description %></span> </p>
-            
-
-        
+            <h4 class="card-title text-uppercase" style="font-weight: bold">Details: </h4>
+            <p class="card-text text-uppercase" style="font-weight: bold">Age: <span style="font-weight: 200"><%= @pet.age %></span> </p>
+            <p class="card-text text-uppercase" style="font-weight: bold">Animal Type: <span style="font-weight: 200"><%= @pet.animal_type %></span> </span>
+            <p class="card-text text-uppercase" style="font-weight: bold">Price per day: <span style="font-weight: 200"><%= @pet.price_per_day %></span> </p>
+            <p class="card-text text-uppercase" style="font-weight: bold">Gender: <span style="font-weight: 200"><%= @pet.gender %></span>  </p>
+            <p class="card-text text-uppercase" style="font-weight: bold">Breed: <span style="font-weight: 200"><%= @pet.breed %></span> </p>
+            <p class="card-text text-uppercase" style="font-weight: bold">Description: <span style="font-weight: 200"><%= @pet.description %></span> </p>
           </div>
         </div>
-        
-        <%= link_to 'Edit', edit_pet_path(@pet), class:"btn btn-warning rounded"  %> |
         <%= link_to 'Back', pets_path, class:"btn btn-warning rounded"   %> |
         <%= link_to 'Reserve', new_pet_reservation_path(@pet), class:"btn btn-warning rounded", style: "background-color: #F56F6C" %>
-        
-    </div>
+      </div>
   </div>
 
-
-
-  
-
-
-</div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-6">
+      <div class="card border-info mb-3" style="max-width: 40rem;">
+        <div class="card-header fw-bold" style="font-size: 30px">
+          <h3>Reviews about <%= @pet.name %> </h3>
+        </div>
+        <% @pet.pet_reviews.each do |pet_review| %>
+        <div class="card border-warning" style="max-width: 40rem;">
+          <div class="card-header"><%= "Review from: #{pet_review.user.first_name} "  %></div>
+          <div class="card-body">
+             <p class="card-text text-uppercase" style="font-weight: bold">Rating: <span style="font-weight: 200"><%= pet_review.rating %></span> </p>
+             <p class="card-text text-uppercase" style="font-weight: bold">Content: <span style="font-weight: 200"><%= pet_review.content %></span> </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>

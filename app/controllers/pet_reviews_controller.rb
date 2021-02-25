@@ -13,8 +13,13 @@ class PetReviewsController < ApplicationController
     @user = current_user
     @pet_review.pet = @pet
     @pet_review.user = @user
+    if @pet_review.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
     
-    redirect_to reservations_path
+    
    
   end
 

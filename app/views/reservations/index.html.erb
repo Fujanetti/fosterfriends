@@ -4,7 +4,9 @@
     <div class="card text-center mb-5">
        <div class="card-header">
         Booking of <%= reservation.pet.name %>
-        <%= link_to "Please leave a review...",  new_reservation_pet_review_path(reservation) %>
+        <% if reservation.end_date.past? %>
+          <%= link_to "Please leave a review...",  new_reservation_pet_review_path(reservation) %>
+        <% end  %>
        </div>
        <div class="card-body">
         <h5 class="card-title">You are booking <%= reservation.pet.name %> from <%= reservation.start_date %> to <%= reservation.end_date %></h5>
@@ -19,11 +21,7 @@
     <li class="list-group-item">Breed: <%= reservation.pet.breed %></li>
     <li class="list-group-item">Shelter: <%= reservation.pet.shelter.name %></li>
     <li class="list-group-item">Price Per Day: <%= reservation.pet.price_per_day %></li>
-<<<<<<< HEAD
-    
-=======
     <li class="list-group-item">City: <%= reservation.pet.shelter.user.city %></li>
->>>>>>> master
   </ul>
 
 </div>
