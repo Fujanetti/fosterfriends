@@ -29,11 +29,11 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
-  def updated
+  def update
     @pet = Pet.find(params[:id])
     @pet.update(pet_params)
 
-    redirect_to pet_path(@pet)
+    redirect_to shelter_path(@pet.shelter_id)
   end
 
   def destroy
