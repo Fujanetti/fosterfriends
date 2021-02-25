@@ -1,5 +1,46 @@
-<ul>
-  <% @pets.each do |pet| %>
-    <li><%= pet.name %></li>
-  <% end %>
-</ul>
+<div class=" mb-4 mt-4 mx-auto" style="width: 700px;">
+<h1 class="text-center mr-3 mb-4"> Animals in <%= @shelter.name %></h1> <%= link_to "Add New Pet", new_shelter_pet_path(@shelter), class: "btn btn-primary add-btn mx-auto" %>
+</div>
+<div class="container1 text-center">
+  <div class="row main-holder">
+    <% @pets.each do |pet| %>
+    <div class="col-sm-3 individual-card">
+      <div class="card">
+        <img src="https://weneedfun.com/wp-content/uploads/2015/10/Cute-puppy-Pictures-29.jpg" class="card-img-top" alt="..." style="object-fit: cover;">
+        <div class="card-body">
+          <h5 class=card-title>
+            <%= pet.name %>
+          </h5>
+          <p class="card-text">
+            <%= pet.description %>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Age:
+            <%= pet.age %>
+          </li>
+          <li class="list-group-item">
+            Gender: <%= pet.gender %>
+          </li>
+           <li class="list-group-item">Animal Type:
+            <%= pet.animal_type %>
+          </li>
+          <li class="list-group-item">
+           Breed: <%= pet.breed %>
+          </li>
+          <li class="list-group-item">
+            Price per day: <%= pet.price_per_day %>
+          </li>
+          <%= link_to "Edit information of #{pet.name}" , edit_pet_path(pet), class: "bottom-link" %>
+        </ul>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+    
+    
+    
+    
+    
