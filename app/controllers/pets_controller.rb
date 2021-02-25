@@ -22,8 +22,7 @@ class PetsController < ApplicationController
     @pet.shelter = @shelter
     @pet.save
 
-    # redirect_to shelter_path(@shelter) Once shelter views are created uncomment this and delete line below
-    redirect_to pets_path
+    redirect_to shelter_path(@shelter)
   end
 
   def edit

@@ -1,9 +1,9 @@
 <div class="container text-center mt-5">
     <% if @reservations.first == nil %>
       <h1> No reservations found! </h1>
-  <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
+  <%= link_to "Go back home", root_path, class: "btn btn-primary mx-auto mt-5"  %>
   <% else %>
-  <h1 class="mb-5">Reservation for <%= @reservations.first.user.first_name %></h1>
+  <h1 class="mb-5">Reservations for <%= @reservations.first.user.first_name %></h1>
   <% @reservations.reverse.each do |reservation| %>
     <div class="card text-center mb-5">
        <div class="card-header">
