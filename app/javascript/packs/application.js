@@ -28,8 +28,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initBookingPetPrice } from '../components/init_booking_pet_price';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initBookingPetPrice();
 });
