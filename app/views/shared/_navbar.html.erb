@@ -1,12 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex ">
+<div class="nav-left-items d-flex collapse navbar-collapse" id="navbarSupportedContent">
   <%= link_to root_path, class: "navbar-brand" do %>
   <%= image_tag "https://ci6.googleusercontent.com/proxy/O5Hy-WtOEzQ_1-syh0TZgI3ctyS90IsRKTyIh6oCUgELchFT93eiGXUYzuauaiXwJRlFCrZzztXfzjhVDdNy8P7vOmajDEqaixswkHFCQMMhhu27jQoYvxXDcKxvehjKNa8WpJPbWhV3296TqhQQuzxrieI1PkAw=s0-d-e1-ft#https://www.freelogodesign.org/file/app/client/thumb/cffd8def-62df-40a0-ba2e-859b661d9688_200x200.png", class: "logo-nav" %>
   <% end %>
+  <ul class="navbar-nav">
+   <li class="nav-item active hmbtn mx-auto">
+        <%= link_to "Home", root_path, class: "nav-link ml-4" %>
+      </li>
+      </ul>
+  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active hmbtn">
-        <%= link_to "Home", root_path, class: "nav-link text-left" %>
-      </li>
       <% if user_signed_in?%>
       <li class="nav-item">
         <%= link_to "Reservations", reservations_path, class: "nav-link" %>
