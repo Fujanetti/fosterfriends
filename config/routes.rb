@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   root to: 'pets#home'
 
-  resources :shelters, only: :show do
+  resources :shelters, only: [:show, :new] do
     resources :pets, only: [:new, :create]
   end
 

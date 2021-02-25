@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  def home    
+  def home  
   end
 
   def index
