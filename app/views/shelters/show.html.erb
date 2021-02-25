@@ -11,7 +11,6 @@
     <div class="col-sm-4">
       <div class="card individual-card justify-content-around">
         <% pet_photo_key = get_photo_key(pet) %>
-        
         <div>
           <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "pet-img card-img-top" %>
         </div>
