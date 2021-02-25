@@ -4,9 +4,16 @@ class ReservationsController < ApplicationController
 
   end
   def new
+    @user = current_user
+    if @user 
     @reservation = Reservation.new
     @pet = Pet.find(params[:pet_id])
-    @user = current_user
+    else
+      redirect_to user_session_path
+    end
+  
+    
+
   end
 
   def create
