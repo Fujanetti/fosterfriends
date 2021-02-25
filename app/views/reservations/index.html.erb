@@ -1,4 +1,8 @@
 <div class="container text-center mt-5">
+    <% if @reservations.first == nil %>
+      <h1> No reservations found! </h1>
+  <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
+  <% else %>
   <h1 class="mb-5">Reservation for <%= @reservations.first.user.first_name %></h1>
   <% @reservations.reverse.each do |reservation| %>
     <div class="card text-center mb-5">
@@ -29,5 +33,7 @@
       <li class="card-text"> Please return <%= reservation.pet.name %> to <%= reservation.pet.shelter.name %>  on <%= reservation.end_date %></li>
         </div>
     </div>
+  <% end %>
+
   <% end %>
 </div>

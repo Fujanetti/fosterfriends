@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  def home    
+  def home  
   end
 
   def index
@@ -40,12 +40,12 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
 
-    redirect_to pet_pat
+    redirect_to pet_path
   end
 
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :animal_type, :price_per_day, :gender, :breed, :description)
+    params.require(:pet).permit(:name, :age, :animal_type, :price_per_day, :gender, :breed, :description, :photo)
   end
 end

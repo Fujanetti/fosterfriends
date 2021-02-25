@@ -3,6 +3,7 @@ class Pet < ApplicationRecord
 
   has_many :pet_reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :age, presence: true
