@@ -1,4 +1,5 @@
 <div class="container text-center mt-5">
+    <%= render 'shared/notices' %>
     <% if @reservations.first == nil %>
       <h1> No reservations found! </h1>
   <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
