@@ -2,9 +2,16 @@
   <%= notice %>
 </p>
 <div class="container1 text-center">
+<% if @pets.first == nil %>
+  <h1 class="mt-4 mb-5"> No results for pets in <%= params[:search].capitalize %>
+  <% else %>
+    <% if params[:search] == "" %>
+    <h1 class="mt-4 mb-5">All pets</h1>
+    <% else %>
   <h1 class="mt-4 mb-5">Pets In
-    <%= params[:search] %>
+    <%= params[:search].capitalize %>
   </h1>
+  <% end %>
   <div class="row main-holder">
     <% @pets.each do |pet| %>
     <div class="col-sm-3 individual-card">
@@ -50,3 +57,4 @@
     <% end %>
   </div>
 </div>
+<% end %>

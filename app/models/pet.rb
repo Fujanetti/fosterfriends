@@ -12,4 +12,13 @@ class Pet < ApplicationRecord
   validates :gender, presence: true
   validates :breed, presence: true
   validates :description, presence: true
-end
+
+  def self.search(search)
+    if search 
+      joins(shelter: :user).where("lower(users.city) LIKE ?", "%#{search.downcase}%")
+    else 
+      all
+    end 
+  end 
+ 
+end 
