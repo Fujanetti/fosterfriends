@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
       <div class="row-col-12">
         <div class="card border-info mb-3" style="max-width: 40rem;">
-        <img src="https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" class="card-img-top" alt="...">
+          <% pet_photo_key = get_photo_key(@pet) %>
+          <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "pet-img card-img-top" %>
           <div class="card-header fw-bold" style="font-size: 30px"><%= @pet.name %></div>
           <div class="card-body">
             <h4 class="card-title text-uppercase" style="font-weight: bold">Details: </h4>

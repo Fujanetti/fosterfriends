@@ -9,7 +9,12 @@
     <% @pets.each do |pet| %>
     <div class="col-sm-3 individual-card">
       <div class="card">
-        <img src="https://weneedfun.com/wp-content/uploads/2015/10/Cute-puppy-Pictures-29.jpg" class="card-img-top" alt="..." style="object-fit: cover;">
+        <% pet_photo_key = get_photo_key(pet) %>
+        
+        <div>
+          <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "pet-img card-img-top" %>
+        </div>
+
         <div class="card-body">
           <h5 class=card-title>
             <%= pet.name %>
