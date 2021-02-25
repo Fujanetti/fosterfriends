@@ -5,7 +5,7 @@
 <% if @pets.first == nil %>
   <h1 class="mt-4 mb-5"> No results for pets in <%= params[:search].capitalize %>
   <% else %>
-    <% if params[:search] == "" %>
+    <% if params[:search] == ""  || params[:search] == nil %>
     <h1 class="mt-4 mb-5">All pets</h1>
     <% else %>
   <h1 class="mt-4 mb-5">Pets In
@@ -14,45 +14,45 @@
   <% end %>
   <div class="row main-holder">
     <% @pets.each do |pet| %>
-    <div class="col-sm-3 individual-card">
-      <div class="card">
+    <div class="col-sm-4">
+      <div class="card individual-card justify-content-around">
         <% pet_photo_key = get_photo_key(pet) %>
         
         <div>
           <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "pet-img card-img-top" %>
         </div>
 
-        <div class="card-body">
-          <h5 class=card-title>
+        <div class="card-body list-group list-group-flush d-flex flex-column align-items-center ">
+          <div class="card-title">
             <%= pet.name %>
-          </h5>
-          <p class="card-text">
+          </div>
+          <div class="card-text">
             <%= pet.description %>
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Age:
+          </div>
+          <div class="list-group-item">Age:
             <%= pet.age %>
-          </li>
-          <li class="list-group-item">
+          </div>
+          <div class="list-group-item">
             Gender: <%= pet.gender %>
-          </li>
-          <li class="list-group-item">
+          </div>
+          <div class="list-group-item">
            Breed: <%= pet.breed %>
-          </li>
-          <li class="list-group-item">
+          </div>
+          <div class="list-group-item">
             Shelter Name: <%= pet.shelter.name %>
-          </li>
-          <li class="list-group-item">
+          </div>
+          <div class="list-group-item">
             Location <%= pet.shelter.user.city %>
-          </li>
-          <li class="list-group-item">
+          </div>
+          <div class="list-group-item">
             Price per day: <%= pet.price_per_day %>
-          </li>
+          </div>
+          <div class="bottom-link1">
           <%= link_to "Learn more about #{pet.name}" , pet, class: "bottom-link" %>
-        </ul>
+          </div>
       </div>
-      </ul>
+      </div>
+
     </div>
     <% end %>
   </div>
