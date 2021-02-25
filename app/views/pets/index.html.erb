@@ -23,19 +23,19 @@
             <%= pet.age %>
           </li>
           <li class="list-group-item">
-            <%= pet.animal_type %>
+            Gender: <%= pet.gender %>
           </li>
           <li class="list-group-item">
-            <%= pet.gender %>
+           Breed: <%= pet.breed %>
           </li>
           <li class="list-group-item">
-            <%= pet.breed %>
+            Shelter Name: <%= pet.shelter.name %>
           </li>
           <li class="list-group-item">
-            <%= pet.shelter.name %>
+            Location <%= pet.shelter.user.city %>
           </li>
           <li class="list-group-item">
-            <%= pet.price_per_day %>
+            Price per day: <%= pet.price_per_day %>
           </li>
           <%= link_to "Learn more about #{pet.name}" , pet, class: "bottom-link" %>
         </ul>
