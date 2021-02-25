@@ -2,17 +2,21 @@
 <div class="main-div">
   <div class=container>
       <img class="logo-img" src="https://ci6.googleusercontent.com/proxy/O5Hy-WtOEzQ_1-syh0TZgI3ctyS90IsRKTyIh6oCUgELchFT93eiGXUYzuauaiXwJRlFCrZzztXfzjhVDdNy8P7vOmajDEqaixswkHFCQMMhhu27jQoYvxXDcKxvehjKNa8WpJPbWhV3296TqhQQuzxrieI1PkAw=s0-d-e1-ft#https://www.freelogodesign.org/file/app/client/thumb/cffd8def-62df-40a0-ba2e-859b661d9688_200x200.png">
+        
+        <% if current_user.present? && current_user.user_type == "Shelter" %>
+          <div class="text-center">
+            <%= link_to "Go to your shelter", shelter_path(current_user.shelter), class: "btn btn-primary btn-lg" %>
+          </div>
+        <% else %>
         <h1 class="text-center mb-5" style="font-family: 'Roboto Condensed', sans-serif;"> Find a friend in your Neighborhood!</h1>
         <div>
-
         <%= form_tag pets_path, :method => 'get', :class => "home-search" do  %>
-        <%= submit_tag "Search", :class => "home-btn" %>
-        <%= text_field_tag :search, params[:search], :class => "form-control me-2 form-search" %>
-
-
-       </div>
+            <%= submit_tag "Search", :class => "home-btn" %>
+            <%= text_field_tag :search, params[:search], :class => "form-control me-2 form-search" %>
+          <% end %>
         <% end %>
-    </div>
+    </div>    
+  </div>
   <img class="banner-img" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgooddogmarketing.com%2Fwp-content%2Fuploads%2F2013%2F09%2FCatsAndDogs_3000.jpg&f=1&nofb=1">
 
 </div>

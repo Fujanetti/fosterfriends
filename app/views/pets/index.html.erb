@@ -39,10 +39,10 @@
            Breed: <%= pet.breed %>
           </div>
           <div class="list-group-item">
-            Shelter Name: <%= pet.shelter.name %>
+            Shelter: <%= link_to pet.shelter.name, shelter_path(pet.shelter) %>
           </div>
           <div class="list-group-item">
-            Location <%= pet.shelter.user.city %>
+            Location: <%= pet.shelter.user.city %>
           </div>
           <div class="list-group-item">
             Price per day: <%= pet.price_per_day %>
