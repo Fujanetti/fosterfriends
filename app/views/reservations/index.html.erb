@@ -4,6 +4,7 @@
     <div class="card text-center">
        <div class="card-header">
         Booking of <%= reservation.pet.name %>
+        <%= link_to "Please leave a review...",  new_reservation_pet_review_path(reservation) %>
        </div>
        <div class="card-body">
         <h5 class="card-title">You are booking baxter from <%= reservation.start_date %> to <%= reservation.end_date %></h5>
@@ -18,6 +19,7 @@
     <li class="list-group-item">Breed: <%= reservation.pet.breed %></li>
     <li class="list-group-item">Shelter: <%= reservation.pet.shelter.name %></li>
     <li class="list-group-item">Price Per Day: <%= reservation.pet.price_per_day %></li>
+    
   </ul>
 
 </div>
