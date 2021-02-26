@@ -1,25 +1,29 @@
 
-<div class="container my-5 " style="max-width: 100rem">
+<div class="container m-5 " style="max-width: 100rem; ">
   <% if @reservations.first == nil %>
     <h1> No reservations found! </h1>
     <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
   <% else %>
-    <h1 class="text-center mt-5">Reservation for: <%= @reservations.first.user.first_name %></h1>
-    <div class="row border-top-0 row-cols-3 pt-5">
+    <h1 class="text-center mt-5" style="text-transform: uppercase; font-size: 4rem; text-shadow: 1px 1px 1px #f29224, 2px 2px 1px #f29224;">Reservation for: <%= @reservations.first.user.first_name %></h1>
+    <div class="row border-top-0 row-cols-3 pt-5" >
     <% @reservations.reverse.each do |reservation| %>
   
-    <div class="col my-3">
+    <div class="col my-3 d-flex align-items-stretch">
       <div class="card border-warning" style="max-width: 25rem; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;" >
       <div class="card-header text-center">
-        <img src="https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" class="card-img-top" alt="...">
+
+        <% pet_photo_key = get_photo_key(reservation.pet) %>
+        <%= cl_image_tag pet_photo_key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle mr-4", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+        
        <h2 class="mt-2"> Booking of <%= reservation.pet.name %></h2>
       </div>
         
-        <div class="card-body">
+        <div class="card-body text-center m-3">
           
-          <% if reservation.end_date.past? %>
+          <% if reservation.end_date.past? && reservation %>
             <p class="card-text text-center"> You rented <%= reservation.pet.name %> from <%= reservation.pet.shelter.name %>  from <%= reservation.start_date %> to <%= reservation.end_date %> </p>
-          <% else  %>
+          <% else %>
             <p class="card-title">You are booking <%= reservation.pet.name %> from <%= reservation.start_date %> to <%= reservation.end_date %></p>
             <p class="card-text">Total price is <%= reservation.total_price %></p>
             <p class="card-text"> Please return <%= reservation.pet.name %> to <%= reservation.pet.shelter.name %>  on <%= reservation.end_date %></li>
