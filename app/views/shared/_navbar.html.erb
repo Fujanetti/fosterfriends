@@ -11,11 +11,13 @@
   </div>
   <div>
   <% if user_signed_in?%>
+  <div class="reservations">
   <ul class="navbar-nav">
-      <li class="mx-auto align-self-center">
+      <li class="mx-auto">
         <%= link_to "Reservations", reservations_path, class: "nav-btn reserve-btn" %>
       </li>
       </ul>
+      </div>
       <% end %>
       </div>
   <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
