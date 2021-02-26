@@ -4,7 +4,7 @@
       <h1> No reservations found! </h1>
   <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
   <% else %>
-    <h1 class="text-center mt-5" style="text-transform: uppercase; font-size: 4rem; text-shadow: 1px 1px 1px #f29224, 2px 2px 1px #f29224;">Reservation for: <%= @reservations.first.user.first_name %></h1>
+    <h1 class="text-center">Reservations</h1>
     <div class="row border-top-0 row-cols-3 pt-5" >
     <% @reservations.reverse.each do |reservation| %>
   
