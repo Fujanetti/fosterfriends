@@ -2,43 +2,93 @@
 
 
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" >
       <div class="row-col-12">
-        <div class="card border-info mb-3" style="max-width: 40rem;">
+        <div class="card border-info mb-3">
           <% pet_photo_key = get_photo_key(@pet) %>
           <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "pet-img card-img-top" %>
-          <div class="card-header fw-bold" style="font-size: 30px"><%= @pet.name %></div>
-          <div class="card-body">
-            <h4 class="card-title text-uppercase" style="font-weight: bold">Details: </h4>
-            <p class="card-text text-uppercase" style="font-weight: bold">Age: <span style="font-weight: 200"><%= @pet.age %></span> </p>
-            <p class="card-text text-uppercase" style="font-weight: bold">Animal Type: <span style="font-weight: 200"><%= @pet.animal_type %></span> </span>
-            <p class="card-text text-uppercase" style="font-weight: bold">Price per day: <span style="font-weight: 200"><%= @pet.price_per_day %></span> </p>
-            <p class="card-text text-uppercase" style="font-weight: bold">Gender: <span style="font-weight: 200"><%= @pet.gender %></span>  </p>
-            <p class="card-text text-uppercase" style="font-weight: bold">Breed: <span style="font-weight: 200"><%= @pet.breed %></span> </p>
-            <p class="card-text text-uppercase" style="font-weight: bold">Description: <span style="font-weight: 200"><%= @pet.description %></span> </p>
-          </div>
+            <div class="card-header fw-bold" style="font-size: 30px"><%= @pet.name %></div>
+            <div class="card-body">
+              <h4 class="card-title text-uppercase" style="font-weight: bold">Details: </h4>
+              <p class="card-text text-uppercase" style="font-weight: bold">Age: <span style="font-weight: 300"><%= @pet.age %></span> </p>
+              <p class="card-text text-uppercase" style="font-weight: bold">Animal Type: <span style="font-weight: 300"><%= @pet.animal_type %></span> </span>
+              <p class="card-text text-uppercase" style="font-weight: bold">Price per day: <span style="font-weight: 300"><%= @pet.price_per_day %></span> </p>
+              <p class="card-text text-uppercase" style="font-weight: bold">Gender: <span style="font-weight: 300"><%= @pet.gender %></span>  </p>
+              <p class="card-text text-uppercase" style="font-weight: bold">Breed: <span style="font-weight: 300"><%= @pet.breed %></span> </p>
+              <p class="card-text text-uppercase" style="font-weight: bold">Description: <span style="font-weight: 300"><%= @pet.description %></span> </p>
+            </div>
         </div>
         <%= link_to 'Back', pets_path, class:"btn btn-warning rounded"   %> |
         <%= link_to 'Reserve', new_pet_reservation_path(@pet), class:"btn btn-warning rounded", style: "background-color: #F56F6C" %>
       </div>
+    </div>
   </div>
 
   <div class="container mt-5">
     <div class="row justify-content-center">
-      <div class="col-6">
-      <div class="card border-info mb-3" style="max-width: 40rem;">
-        <div class="card-header fw-bold" style="font-size: 30px">
-          <h3>Reviews about <%= @pet.name %> </h3>
-        </div>
-        <% @pet.pet_reviews.each do |pet_review| %>
-        <div class="card border-warning" style="max-width: 40rem;">
-          <div class="card-header"><%= "Review from: #{pet_review.user.first_name} "  %></div>
-          <div class="card-body">
-             <p class="card-text text-uppercase" style="font-weight: bold">Rating: <span style="font-weight: 200"><%= pet_review.rating %></span> </p>
-             <p class="card-text text-uppercase" style="font-weight: bold">Content: <span style="font-weight: 200"><%= pet_review.content %></span> </p>
+      <div class="col-12">
+        <div class="card border-info mb-3" >
+          <div class="card-header fw-bold" style="font-size: 30px">
+            <h3>Reviews about <%= @pet.name %> </h3>
           </div>
+          <% @pet.pet_reviews.each do |pet_review| %>
+          <div class="card border-warning" style="max-width: 100rem;">
+            <div class="card-header"><%= "Review from: #{pet_review.user.first_name} "  %></div>
+            <div class="card-body">
+                <p class="card-text text-uppercase" style="font-weight: bold">Stars: 
+                <% if pet_review.rating == 5  %>
+                  <% pet_review.rating.times do  %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <% else  %>
+                  <% pet_review.rating.times do  %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% pet_review.blank_stars.times do  %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                <% end %>
+                </p>
+                <p class="card-text text-uppercase" style="font-weight: bold">Content: <span style="font-weight: 300"><%= pet_review.content %></span> </p>
+            </div>
         </div>
       </div>
-    <% end %>
+      
+      <% end %>
     </div>
   </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12">
+      <div class="card border-info mb-3">
+        <div class="card-header fw-bold" style="font-size: 30px">
+          <h3>Reviews about <%= @pet.shelter.name %> </h3>
+        </div>
+        <% @pet.shelter.shelter_reviews.each do |shelter_review| %>
+        <div class="card border-warning" style="max-width: 100rem;">
+          <div class="card-header"><%= "Review from: #{shelter_review.user.first_name} "  %></div>
+          <div class="card-body">
+              <p class="card-text text-uppercase" style="font-weight: bold">Stars: 
+                  
+              <% if shelter_review.rating == 5  %>
+                  <% shelter_review.rating.times do  %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <% else  %>
+                  <% shelter_review.rating.times do  %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% shelter_review.blank_stars.times do  %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+              <% end %>
+
+                
+                
+              <p class="card-text text-uppercase" style="font-weight: bold">Content: <span style="font-weight: 300"><%= shelter_review.content %></span> </p>
+          </div>
+      
+    <% end %>
+  </div>
+
