@@ -36,18 +36,7 @@
             <div class="card-header"><%= "Review from: #{pet_review.user.first_name} "  %></div>
             <div class="card-body m-3">
                 <p class="card-text text-uppercase" style="font-weight: bold">Stars: 
-                <% if pet_review.rating == 5  %>
-                  <% pet_review.rating.times do  %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                <% else  %>
-                  <% pet_review.rating.times do  %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                  <% pet_review.blank_stars.times do  %>
-                    <i class="far fa-star"></i>
-                  <% end %>
-                <% end %>
+                <%= render "shared/review_stars", {rating: pet_review.rating} %>
                 </p>
                 <p class="card-text text-uppercase" style="font-weight: bold">Content: <span style="font-weight: 300"><%= pet_review.content %></span> </p>
             </div>
@@ -71,19 +60,7 @@
           <div class="card-body m-3">
               <p class="card-text text-uppercase" style="font-weight: bold">Stars: 
                   
-              <% if shelter_review.rating == 5  %>
-                  <% shelter_review.rating.times do  %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                <% else  %>
-                  <% shelter_review.rating.times do  %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                  <% shelter_review.blank_stars.times do  %>
-                    <i class="far fa-star"></i>
-                  <% end %>
-              <% end %>
-
+              <%= render "shared/review_stars", {rating: shelter_review.rating} %>
                 
                 
               <p class="card-text text-uppercase" style="font-weight: bold">Content: <span style="font-weight: 300"><%= shelter_review.content %></span> </p>
