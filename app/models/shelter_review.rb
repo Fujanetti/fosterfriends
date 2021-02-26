@@ -7,6 +7,6 @@ class ShelterReview < ApplicationRecord
   has_many_attached :photos
 
   def blank_stars
-    5 - shelter.shelter_reviews.first.rating
+    5 - shelter.shelter_reviews.first.rating # need to be fixed to find corrispondent shelter
   end
 end
