@@ -23,32 +23,34 @@
         </div>
 
         <div class="card-body list-group list-group-flush d-flex flex-column align-items-center ">
-          <div class="card-title">
-            <%= pet.name %>
+          <div class="card-title mt-2">
+            <p style="font-size: 2.5rem"><%= pet.name %></p>
           </div>
           <div class="card-text">
             <%= pet.description %>
           </div>
-          <div class="list-group-item">Age:
+          <div class="list-group-item"><span class="bold">Age: </span>
             <%= pet.age %>
           </div>
           <div class="list-group-item">
-            Gender: <%= pet.gender %>
+            <span class="bold">Gender: </span><%= pet.gender %>
           </div>
           <div class="list-group-item">
-           Breed: <%= pet.breed %>
+          <span class="bold">Breed: </span> <%= pet.breed %>
           </div>
           <div class="list-group-item">
-            Shelter: <%= link_to pet.shelter.name, shelter_path(pet.shelter) %>
+           <span class="bold">Shelter:  </span> <%= link_to pet.shelter.name, shelter_path(pet.shelter) %>
           </div>
           <div class="list-group-item">
-            Location: <%= pet.shelter.user.city %>
+          <span class="bold">Location: </span>
+             <%= pet.shelter.user.city %>
           </div>
           <div class="list-group-item">
-            Price per day: <%= pet.price_per_day %>
+          <span class="bold">Price per day: </span>
+             <%= pet.price_per_day %>
           </div>
           <div class="bottom-link1">
-          <%= link_to "Learn more about #{pet.name}" , pet, class: "bottom-link" %>
+          <%= link_to "Learn more about #{pet.name}" , pet, class: " btn btn-warning bottom-link" %>
           </div>
       </div>
       </div>
