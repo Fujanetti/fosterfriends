@@ -29,6 +29,10 @@ const initBookingPetPrice = () => {
         const totalPrice = Math.round(totalDays * price);
         displayPrice.innerText = `Total: ${totalPrice}$` // Display the price on reservation/new.
         reservationPrice.value = totalPrice; // Sets Reservation instance price.
+      } else if (totalDays === 0) {
+        alertelement.innerText = `The minimum period for a reservation is one day!!`;
+        displayPrice.innerText = 'Total:'
+        submitButton.disabled = true;
       } else {
         alertelement.innerText = `Start date must be earlier than end date!!`;
         displayPrice.innerText = 'Total:'
