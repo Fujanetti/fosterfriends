@@ -1,0 +1,14 @@
+<h1 class="text-center mb-4 mt-4 mr-3">  Edit <%= @pet.name %>'s information</h1> 
+<div class="container form">
+<%= simple_form_for @pet do |f| %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :age %>
+<%= f.input :gender %>
+<%= f.input :animal_type %>
+<%= f.input :breed %>
+<%= f.input :price_per_day %>
+<%= f.submit %>
+
+<% end %>
+</div>

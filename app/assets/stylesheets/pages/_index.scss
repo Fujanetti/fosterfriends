@@ -1,21 +1,39 @@
 // Import page-specific CSS files here.
 @import "home";
-
+@import "show";
+@import "edit";
 .bottom-link {
-  border: 1px rgba(10,10,10,.2) ridge;
-  box-shadow: 1px 2px 5px rgba(0,0,0,.4);
-  padding-bottom: 20px;
+  
+}
+.bottom-link1 {
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .main-holder {
-  margin-left: 148px;
+  
 }
 .container1 {
   width: 95%;
   margin: 0 auto;
 }
 .individual-card {
-  box-shadow: 2px 4px 5px rgba(0,0,0,.4);
-  padding: 0;
-  margin: 15px 30px;
+  padding: 0px;
+  margin: 20px 20px;
+  height: 720px;
 }
+
+.pet-img {
+  object-fit: cover;
+  object-position: center;
+  height: 275px;
+
+}
+.card-body {
+  padding: 0px;
+}
+
+.list-group-item {
+  width: 100%
+}
+

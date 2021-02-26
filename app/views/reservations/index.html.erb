@@ -1,3 +1,4 @@
+
 <div class="container my-5 " style="max-width: 100rem">
   <% if @reservations.first == nil %>
     <h1> No reservations found! </h1>
@@ -43,6 +44,7 @@
             <li class="card-text"> Please return <%= reservation.pet.name %> to <%= reservation.pet.shelter.name %>  on <%= reservation.end_date %></li>
           <% end  %>  
           </small>
+
         </div>
       </div>
     

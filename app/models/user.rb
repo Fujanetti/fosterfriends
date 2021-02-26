@@ -19,4 +19,6 @@ class User < ApplicationRecord
   validates :city, presence: true
   validates :zip_code, presence: true
   validates :user_type, acceptance: { accept: CATEGORIES }, presence: true
+
+
 end

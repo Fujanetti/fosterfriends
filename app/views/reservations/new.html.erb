@@ -1,8 +1,11 @@
 <div class="container">
+<div class="hidden booking-pet-price" data-pet-price="<%= @pet.price_per_day %>"></div>
 <%= simple_form_for [@pet, @reservation]  do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
+  <%= f.hidden_field :total_price %>
   <%= f.submit %>
 <% end %>
-
+<br>
+<h3 class='displayPrice'>Total: </h3>
 
