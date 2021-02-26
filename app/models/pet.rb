@@ -11,5 +11,5 @@ class Pet < ApplicationRecord
   validates :price_per_day, presence: true
   validates :gender, presence: true
   validates :breed, presence: true
-  validates :description, presence: true
+  validates :description, presence: true 
 end

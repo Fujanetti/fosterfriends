@@ -18,14 +18,11 @@ class PetReviewsController < ApplicationController
     else
       render :new
     end
-    
-    
-   
   end
 
   private
   
   def pet_review_params
-    params.require(:pet_review).permit(:rating, :content, :pet_id, :photos: [])
+    params.require(:pet_review).permit(:rating, :content, :pet_id, :photos)
   end
 end
