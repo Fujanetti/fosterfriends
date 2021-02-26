@@ -44,13 +44,12 @@ padding: 0px
 }
 .searchfld {
   position: relative;
-  margin-left: 30px;
-
 
 }
 
 .logbtn {
-  margin-right: 30px;
+  margin-right: 35px;
+  margin-top: 14px;
 }
 
 .btnnav {
@@ -60,9 +59,10 @@ padding: 0px
   background-color: #f29224;
   border-style: none;
   padding: 7px 32px;
-  left: 212px;
+  left: 190px;
   transition: .4s;
   font-family: 'Source Sans Pro', sans-serif;
+  top: 8px;
   &:hover {
 background-color: #faa360;
 color: black;
@@ -83,6 +83,7 @@ opacity: 1;
   padding: 10px 40px;
   margin-left: 40px;
   transition: .4s;
+  margin-top: 60px;
   font-family: 'Source Sans Pro', sans-serif;
   &:hover {
 background-color: #faa360;
@@ -94,6 +95,10 @@ text-decoration: none;
 
 
 .reserve-btn {
-margin-left: 200px;
+  position: absolute;
+  top: 23px;
+  left: 632px;
+  margin: 0px;
+
 
 }

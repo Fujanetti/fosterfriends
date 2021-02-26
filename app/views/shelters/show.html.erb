@@ -5,15 +5,15 @@
     <%= link_to "Add New Pet", new_shelter_pet_path(@shelter), class: "btn btn-primary add-btn mx-auto" %>
   <% end %>
 </div>
-<div class="container1 text-center">
-  <div class="row main-holder">
+<div class="container2 text-center">
+  <div class="row main-holder mx-auto">
     <% @pets.each do |pet| %>
-    <div class="col-sm-4">
-      <div class="card individual-card justify-content-around">
+    <div class="col-sm-5 mx-auto" style="margin-bottom: 35px;">
+      <div class="card individual-card justify-content-around show-card" style="height: 620px;">
         <% pet_photo_key = get_photo_key(pet) %>
         
         <div>
-          <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "pet-img card-img-top" %>
+          <%= cl_image_tag pet_photo_key, alt: "pet photo", class: "show-img card-img-top" %>
         </div>
 
         <div class="card-body list-group list-group-flush d-flex flex-column align-items-center ">

@@ -28,9 +28,9 @@
       </li>
        <% end  %>
       <% if current_page?(root_path) == false  %>
-      <li class="d-flex searchfld">
+      <div class="d-flex searchfld mx-auto">
         <%= form_tag pets_path, :method => 'get', :class => "d-flex" do  %>
-        <%= text_field_tag :search, params[:search], :class => "form-control me-2 searchbar" %>
+        <%= text_field_tag :search, params[:search], :class => "form-control me-2 searchbar mt-2" %>
         <div>
           <%= submit_tag "Search", :class => "btnnav" %>
           <% end %>

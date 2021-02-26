@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'reservations/new'
   get 'reservations/create'
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'user_manuals' }
   
   root to: 'pets#home'
 
-  resources :shelters, only: [:show, :new] do
+  resources :shelters, only: [:show, :new, :create] do
     resources :pets, only: [:new, :create]
   end
 
@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     resources :pet_reviews, only: [:new, :create]
     resources :shelter_reviews, only: [:new, :create]
   end
+
+
 
 end
