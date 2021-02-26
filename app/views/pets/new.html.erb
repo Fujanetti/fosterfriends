@@ -1,5 +1,5 @@
 <div class="container">
-<%= link_to "Back to shelter dashboard", shelter_path(@shelter), class: "btn btn-primary mb-4" %>
+<%= link_to "Back to shelter", shelter_path(@shelter), class: "btn btn-primary mb-4 back-shelter-btn" %>
 <%= simple_form_for [@shelter, @pet]  do |f| %>
   <%= f.input :name %>
   <%= f.input :age %>
