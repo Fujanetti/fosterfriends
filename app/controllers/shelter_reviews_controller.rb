@@ -16,7 +16,7 @@ class ShelterReviewsController < ApplicationController
     @shelter_review.shelter = @shelter
     @shelter_review.user = @user
     if @shelter_review.save
-      redirect_to shelter_path(@shelter)
+      redirect_to pet_path(@reservation.pet)
     else
       render :new
     end
