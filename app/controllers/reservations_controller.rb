@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
     @reservation.user = @user
     if @reservation.save
-      redirect_to reservations_path, notice: "Reservation successful!"
+      redirect_to reservations_path, notice: "Reservation successful! Your friend is waiting for you!"
     else
       render :new
     end

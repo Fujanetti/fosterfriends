@@ -1,8 +1,8 @@
-
 <div class="container my-5 " style="max-width: 100rem">
-  <% if @reservations.first == nil %>
-    <h1> No reservations found! </h1>
-    <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
+    <%= render 'shared/notices' %>
+    <% if @reservations.first == nil %>
+      <h1> No reservations found! </h1>
+  <%= link_to "Go back to home page", root_path, class: "btn btn-primary mx-auto"  %>
   <% else %>
     <h1 class="text-center mt-5">Reservation for: <%= @reservations.first.user.first_name %></h1>
     <div class="row border-top-0 row-cols-3 pt-5">
