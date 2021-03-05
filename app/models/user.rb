@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   CATEGORIES = ['Caretaker', 'Shelter']
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
