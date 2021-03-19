@@ -15,7 +15,7 @@
   <div class="row main-holder">
     <% @pets.each do |pet| %>
     <div class="col-sm-4">
-      <div class="card individual-card justify-content-around">
+      <div class="card individual-card justify-content-around mb-5">
         <% pet_photo_key = get_photo_key(pet) %>
         
         <div>
@@ -49,8 +49,8 @@
           <span class="bold">Price per day: </span>
              <%= pet.price_per_day %>
           </div>
-          <div class="bottom-link1">
-          <%= link_to "Learn more about #{pet.name}" , pet, class: " btn btn-warning bottom-link" %>
+          <div class="list-group-item mb-5">
+          <%= link_to "Learn more about #{pet.name}" , pet, class: " btn btn-warning bottom-link " %>
           </div>
       </div>
       </div>

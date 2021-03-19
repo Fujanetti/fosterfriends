@@ -1,5 +1,6 @@
+
 <div class=" mb-4 mt-4 mx-auto" style="width: 700px;">
-<h1 style="text-align: center; text-transform: uppercase; font-size: 3rem; text-shadow: 1px 1px 1px #f29224, 2px 2px 1px #f29224;">Dashboard: <%= @shelter.name  %> 🏡</h1>
+<h1 class="text-center"><%= @shelter.name  %> 🏡</h1>
 
   <h4 class = "text-center mr-3 mb-4"><%= @shelter.user.address%>, <%= @shelter.user.city%> <%= @shelter.user.zip_code%> </h4>
   <% if current_user.present? && current_user.shelter == @shelter %>
@@ -7,7 +8,6 @@
   <% end %>
 </div>
 <div class="container1 text-center">
-<h2 style="font-size: 2.5rem;">🐶 Here is our list of furry friends 🐱</h2>
   <div class="row main-holder">
     <% @pets.each do |pet| %>
     <div class="col-sm-5 mx-auto" style="margin-bottom: 35px;">
